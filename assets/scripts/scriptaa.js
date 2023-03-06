@@ -1,20 +1,35 @@
-// declare var for each select id on a form
-
-var monthInput = document.getElementById("#month");
-console.log(month);
-var dayInput = document.getElementById("#day");
-var weatherInput = document.getElementById("#weather");
-var saveButton = document.querySelector("#save");
+// declare var 
 
 
-saveButton.addEventListener("click", function(event){
-event.preventDefault();
-var month = document.getElementById("#month").value;
-var day = document.getElementById("#day").value;
+var bStart = document.querySelector("#bStart");
+
+var secondsLeft = 60;
+const secondsLeftArr = [];
 
 
-localStorage.setItem("month", month);
-localStorage.setItem("day", day)
+var showTime = document.getElementById("timer");
 
-})
+for (let i= secondsLeft; i > 0; i-- ){secondsLeftArr.push(i)};
+
+console.log(secondsLeftArr);
+
+
+
+
+
+//function setClock(){
+//var timerInterval = setInterval(function() {
+   // secondsLeft--;
+   // if(secondsLeft === 0){clearInterval(timerInterval); 
+  //  timer.textContent = " seconds left: " + secondsLeft;}
+  //  }, 1000);    }
+    
+  
+
+
+//saveButton.addEventListener("click", function(event){
+//event.preventDefault();
+//var month = document.getElementById("#month").value;
+
+//localStorage.setItem("month", month);)})
 

@@ -1,6 +1,7 @@
 // declare var 
 
 
+
 var bStart = document.querySelector("#bStart");
 
 var secondsLeft = 60;
@@ -12,6 +13,8 @@ var showTime = document.getElementById("timer");
 for (let i= secondsLeft; i > 0; i-- ){secondsLeftArr.push(i)};
 
 console.log(secondsLeftArr);
+
+console.log(questions);
 
 
 

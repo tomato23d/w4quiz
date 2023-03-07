@@ -16,7 +16,7 @@ var secondsLeft = 60;
 const secondsLeftArr = [];
 
 
-var showTime = document.getElementById("timer");
+//var showTime = document.getElementById("timer");
 
 for (let i= secondsLeft; i > 0; i-- ){secondsLeftArr.push(i)};
 
@@ -27,12 +27,16 @@ var li2 = document.createElement("li"); li2.id = "li2";
 var li3 = document.createElement("li"); li3.id = "li3";
 var li4 = document.createElement("li"); li4.id = "li4";
 
+var B11 = document.createElement("button"); B11.id = "b11i"; 
+B11.innerText = "1";
+console.log(B11);
+listing.appendChild(B11);
 
 
 var number = 0;
-
+// iterate through questions
 function publishQuestion (){
-   // instead of li's, make them buttons and do it a loop
+  
    li1.textContent = questions[number].choices[0];
    li2.textContent = questions[number].choices[1];
    li3.textContent = questions[number].choices[2];
@@ -56,29 +60,26 @@ publishQuestion(); number++});
 const myChoiceId = ["li1", "li2", "li3", "li4"];
 const myButtonChoice = ["B1", "B2", "B3"];
 
-function myChoice (event){
+//function myChoice (event){
    //event.preventDefault();
-   var myChoice = event.target;
-   console.log(myChoice)
-   for (let x =0; x < myButtonChoice.length; x++)
-   {if (myChoice === B1){console.log("one")}
-   else if (myChoice === B2){console.log("two")}
-   else {console.log("three")}}
-   //selection.innerHTML = myChoice;
-};
+   //var myChoice = event.target;
+   //console.log(myChoice)
+  // for (let x =0; x < myButtonChoice.length; x++)
+  // {if (myChoice === B1){console.log("one")}
+ //  else if (myChoice === B2){console.log("two")}
+ //  else {console.log("three")}}
+   //selection.innerHTML = myChoice;};
 
-choices.addEventListener('click', myChoice)
-
+//choices.addEventListener('click', myChoice)
 
 
-//control  /
+
 function setClock(){
 var timerInterval = setInterval(function() {
     secondsLeft--;
-    console.log(secondsLeft);
-    timer.textContent = secondsLeft;
+    timer.textContent = ("Seconds left: " + secondsLeft);
    if(secondsLeft === 0){clearInterval(timerInterval); 
-   timer.textContent = " seconds left: " + secondsLeft;}
+   timer.textContent = "The game is finished!";}
    }, 1000);    }
     
-   setClock();
+ // setClock();

@@ -1,13 +1,13 @@
 const questions = [
     {
       title: "Commonly used data types DO NOT include:",
-      choices: ["strings", "booleans", "alerts", "numbers"],
+      choices: ["alerts", "booleans", "strings", "numbers"],
       answer: "alerts",
     
     },
     {
       title: "The condition in an if / else statement is enclosed within ____.",
-      choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+      choices: ["quotes", "parentheses", "curly brackets", "square brackets"],
       answer: "parentheses",
     },
     {
@@ -31,6 +31,22 @@ const questions = [
             choices: ['JavaScript', 'terminal / bash', 'for loops', 'console.log'],
             answer: 'console.log',
           },
+];
+
+const gameOutcome = [
+      {player: "aa",
+       result: ["victory", "loss"],
+       questions: {questionNumber: [1,2,3,4,5],
+                    rightIndex: [0, 1, 3, 2, 3],
+                    selectedIndex: ["myChoice"]}}];
+
+const gameOutcomeExample = {
+      questionNumber: [1,2,3,4,5],
+      rightIndex: [0, 1, 3, 2, 3],
+      isCorrect: [true, true, true, true, true]};
 
 
-]
+const gameOutcome1 =[ {
+                        questionNumber: [],
+                        rightIndex: [],
+                        isCorrect: []}];

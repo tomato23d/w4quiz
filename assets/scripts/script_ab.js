@@ -23,10 +23,10 @@ var li2 = document.createElement("li"); li2.id = "li2";
 var li3 = document.createElement("li"); li3.id = "li3";
 var li4 = document.createElement("li"); li4.id = "li4";
 
-var B11 = document.createElement("button"); B11.id = "b11"; 
-var B22 = document.createElement("button"); B22.id = "b22"; 
-var B33 = document.createElement("button"); B33.id = "b33"; 
-var B44 = document.createElement("button"); B44.id = "b44"; 
+var B11 = document.createElement("button"); B11.id = "b11i"; 
+var B22 = document.createElement("button"); B22.id = "b22i"; 
+var B33 = document.createElement("button"); B33.id = "b33i"; 
+var B44 = document.createElement("button"); B44.id = "b44i"; 
 
 
 
@@ -44,8 +44,8 @@ listing.appendChild(B44);
 var number = 0;
 
 // start with button Start Quiz
-//bStart.addEventListener("click", function(){
-   //    publishQuestion(); number++});
+bStart.addEventListener("click", function(){
+       publishQuestion(); number++});
 
  function publishQuestion (){
   
@@ -66,27 +66,39 @@ answer.textContent = questions[number].answer;
 
 var rightIndex = 0;
 var QuestionNumber = number+1;
-const myButtonChoice = ["b11", "b22", "b33", "b44"];
+const myButtonChoice = ["B11", "B22", "B33", "B44"];
 
 //select an answer 
-//choices.addEventListener('click', myChoice);
+choices.addEventListener('click', myChoice);
 
-function ClickChoice (event){
+function myChoice (event){
       event.preventDefault();
       var myChoice = event.target;
-     console.log(myButtonChoice.indexOf(myChoice));}
+     
+         for (let x =0; x < myButtonChoice.length; x++)
+         {if (myChoice === myButtonChoice[x]){console.log("x")}
+       
+         else {console.log("hello")}}
+      
+   };
+      for (let x = 0; x < questions[number].choices.length; x++)
+      {if (questions[number].choices[x] === questions[number].answer)
+            {rightIndex = x; 
+                 gameOutcome1.push(QuestionNumber, rightIndex, true);
+                  console.log("QuestionNumber: "+ QuestionNumber);
+                  console.log("rightIndex: " + rightIndex);
+                  console.log("correctChoice: "+ true);
+                  
 
-     for (let x = 0; x < questions[number].choices.length; x++)
-     {if (questions[number].choices[x] === questions[number].answer)
-        {rightIndex = x; 
-              //gameOutcome1.push(QuestionNumber, rightIndex, true);
-              console.log("QuestionNumber: "+ QuestionNumber);
-              console.log("rightIndex: " + rightIndex);
-              console.log("correctChoice: "+ true);}
-      else{return}}}
- bStart.addEventListener("click", function(){
-            publishQuestion(); number++});
-listing.addEventListener('click', ClickChoice);
+                 console.log (gameOutcome1[number]);
+            
+            }
+       else {gameOutcome1.push(QuestionNumber, rightIndex, false);
+            console.log("correctChoice: "+ false)}
+      }
+};
+
+
 
 function setClock(){
 var timerInterval = setInterval(function() {
@@ -97,3 +109,5 @@ var timerInterval = setInterval(function() {
    }, 1000);    }
     
  setClock();
+
+ //

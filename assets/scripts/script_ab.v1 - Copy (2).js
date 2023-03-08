@@ -51,6 +51,7 @@ var victory = 0;
 const myButtonChoice = ["b11", "b22", "b33", "b44"];
 
  function publishQuestion (){
+setClock();
 console.log("current question index: "+ number);
 console.log("QuestionNumber: "+ QuestionNumber);
     
@@ -68,6 +69,7 @@ console.log("QuestionNumber: "+ QuestionNumber);
 title.textContent = questions[number].title;
 choices.appendChild(listing);
 answer.textContent = questions[number].answer;
+bResult.setAttribute("style", "color:black");
 choices.addEventListener('click', myChoice);
 number++ ;
 };
@@ -84,8 +86,8 @@ function myChoice (event){
       for (let x = 0; x < questions.length; x++)
       for (let i = 0; i < questions[0].choices.length; i++)
       if  (!(questions[x].choices[i]=== questions[x].answer) && (myButtonChoice.indexOf(myChoice) ===i))
-      {BGreen()}
-      else {BPurple()}
+      {BOrange()}
+      else {BGreen()}
 
 };
 
@@ -94,11 +96,11 @@ function myChoice (event){
       publishQuestion(); QuestionNumber++});
 
 //choices.addEventListener('click', myChoice);
-function BGreen() {
+function BOrange() {
       bResult.setAttribute("style", "color:orange")
 };
 
-function BPurple() {
+function BGreen() {
       bResult.setAttribute("style", "color:green")
 };
 
@@ -109,6 +111,6 @@ var timerInterval = setInterval(function() {
    timer.textContent = ("Seconds left: " + secondsLeft);
    if(secondsLeft === 0){clearInterval(timerInterval); 
    timer.textContent = "The game is finished!";}
-   }, 1000);    }
+   }, 1000);    };
     
- setClock();
+ 

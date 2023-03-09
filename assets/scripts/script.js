@@ -1,4 +1,4 @@
-// declare var 
+// declare variables
 
 var title = document.getElementById("showTitle");
 var choices = document.getElementById("showChoices");
@@ -17,6 +17,7 @@ const secondsLeftArr = [];
 
 for (let i= secondsLeft; i > 0; i-- ){secondsLeftArr.push(i)};
 
+//create elements to load information
 var listing = document.createElement("ul");
 
 var li1 = document.createElement("li"); li1.id = "li1";
@@ -47,7 +48,7 @@ var rightIndex = 0;
 var QuestionNumber = 1;
 var victory = 0;
  
-// start with button Start Quiz
+
 const myButtonChoice = ["b11", "b22", "b33", "b44"];
 
  function publishQuestion (){
@@ -74,7 +75,7 @@ choices.addEventListener('click', myChoice);
 number++ ;
 };
 
-//select an answer 
+//select an answer and debug to flow the right choice
 
 function myChoice (event){
       event.preventDefault();
@@ -91,11 +92,11 @@ function myChoice (event){
 
 };
 
-
+//Listen to the button to load the quiz question
  bStart.addEventListener("click", function(){
       publishQuestion(); QuestionNumber++});
 
-//choices.addEventListener('click', myChoice);
+//attempted to debug the flow answer selection
 function BOrange() {
       bResult.setAttribute("style", "color:orange")
 };
@@ -104,7 +105,7 @@ function BGreen() {
       bResult.setAttribute("style", "color:green")
 };
 
-
+// Only 60 seconds are allowed on this game
 function setClock(){
 var timerInterval = setInterval(function() {
     secondsLeft--;

@@ -32,21 +32,3 @@ const questions = [
             answer: 'console.log',
           },
 ];
-
-const gameOutcome = [
-      {player: "aa",
-       result: ["victory", "loss"],
-       questions: {questionNumber: [1,2,3,4,5],
-                    rightIndex: [0, 1, 3, 2, 3],
-                    selectedIndex: ["myChoice"]}}];
-
-const gameOutcomeExample = {
-      questionNumber: [1,2,3,4,5],
-      rightIndex: [0, 1, 3, 2, 3],
-      isCorrect: [true, true, true, true, true]};
-
-
-const gameOutcome1 =[ {
-                        questionNumber: [],
-                        rightIndex: [],
-                        isCorrect: []}];

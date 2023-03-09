@@ -51,7 +51,7 @@ var victory = 0;
 const myButtonChoice = ["b11", "b22", "b33", "b44"];
 
  function publishQuestion (){
-setClock();
+
 console.log("current question index: "+ number);
 console.log("QuestionNumber: "+ QuestionNumber);
     
@@ -68,7 +68,7 @@ console.log("QuestionNumber: "+ QuestionNumber);
 // publish on a screen question title and four choices   
 title.textContent = questions[number].title;
 choices.appendChild(listing);
-answer.textContent = questions[number].answer;
+answer.textContent = "Correct answer: "+ questions[number].answer;
 bResult.setAttribute("style", "color:black");
 choices.addEventListener('click', myChoice);
 number++ ;
@@ -114,3 +114,4 @@ var timerInterval = setInterval(function() {
    }, 1000);    };
     
  
+setClock();
